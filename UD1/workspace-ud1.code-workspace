@@ -1,0 +1,19 @@
+{
+	"folders": [
+		{
+			"path": "Externo"
+		},
+		{
+			"path": "primercodigojs"
+		},
+		{
+			"path": "primerdebug"
+		},
+		{
+			"path": "Pruebas"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "Pruebas"
+	}
+}

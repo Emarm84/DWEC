@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="es">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="exe_highlighter.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>7.1.- Demo: tu primera depuración de código JavaScript. | UD1: Tecnologías, lenguajes y entorno de trabajo </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta name="author" content="Javier Rojas Ostiategui" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-sa/4.0/" />
+<meta name="generator" content="eXeLearning 2.6 - exelearning.net" />
+<!--[if lt IE 9]><script type="text/javascript" src="exe_html5.js"></script><![endif]-->
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="exe_highlighter.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+    </head>
+<body class="exe-web-site" id="exe-node-41"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<header id="header" ><div id="headerContent">UD1: Tecnologías, lenguajes y entorno de trabajo</div></header>
+<nav id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">UD1: Tecnologías, lenguajes y entorno de trabajo</a></li>
+   <li><a href="1_evolucin_de_la_web.html" class="daddy">1.- Evolución de la web</a>
+   <ul class="other-section">
+      <li><a href="11_reas.html" class="no-ch">1.1.- Áreas</a></li>
+   </ul>
+   </li>
+   <li><a href="2_arquitectura_del_navegador.html" class="no-ch">2.- Arquitectura del navegador</a></li>
+   <li><a href="3_lenguajes_de_programacin_web.html" class="daddy">3.- Lenguajes de programación web</a>
+   <ul class="other-section">
+      <li><a href="31_javascript.html" class="no-ch">3.1.- JavaScript</a></li>
+   </ul>
+   </li>
+   <li><a href="4_herramientas_y_utilidades.html" class="daddy">4.- Herramientas y utilidades</a>
+   <ul class="other-section">
+      <li><a href="41_instalacin_y_configuracin_de_visual_studio_code.html" class="no-ch">4.1- Instalación y configuración de Visual Studio Code</a></li>
+   </ul>
+   </li>
+   <li><a href="5_integrar_scripts_en_un_html.html" class="daddy">5.- Integrar scripts en un HTML</a>
+   <ul class="other-section">
+      <li><a href="51_estructura_bsica_de_un_html.html" class="no-ch">5.1.- Estructura básica de un HTML</a></li>
+   </ul>
+   </li>
+   <li><a href="6_ejemplos_comentados.html" class="daddy">6.- Ejemplos comentados</a>
+   <ul class="other-section">
+      <li><a href="61_demo_tu_primer_cdigo_javascript.html" class="no-ch">6.1.- Demo: Tu primer código JavaScript</a></li>
+      <li><a href="62_demo_tu_primer_cdigo_javascript_en_archivo_externo.html" class="no-ch">6.2.- Demo: Tu primer código JavaScript en archivo externo</a></li>
+   </ul>
+   </li>
+   <li class="current-page-parent"><a href="7_depurar_cdigo_javascript_con_chrome.html" class="current-page-parent daddy">7.- Depurar código JavaScript con Chrome</a>
+   <ul>
+      <li id="active"><a href="71_demo_tu_primera_depuracin_de_cdigo_javascript.html" class="active no-ch">7.1.- Demo: tu primera depuración de código JavaScript.</a></li>
+      <li><a href="72_para_saber_ms_integrar_toda_la_depuracin_en_visual_studio_code.html" class="no-ch">7.2.- Para saber más: integrar toda la depuración en Visual Studio Code</a></li>
+   </ul>
+   </li>
+</ul>
+</nav>
+<div id='topPagination'>
+<nav class="pagination noprt">
+<a href="7_depurar_cdigo_javascript_con_chrome.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="72_para_saber_ms_integrar_toda_la_depuracin_en_visual_studio_code.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+<div id="main-wrapper">
+<section id="main">
+<header id="nodeDecoration"><h1 id="nodeTitle">7.1.- Demo: tu primera depuración de código JavaScript.</h1></header>
+<article class="iDevice_wrapper CasopracticofpdIdevice em_iDevice em_iDevice_casopracticofpd" id="id55">
+<div class="iDevice emphasis_casopracticofpd" >
+<header class="iDevice_header"><h1 class="iDeviceTitle">Código fuente</h1></header>
+<div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta55_147" class="block iDevice_content">
+<p>Archivo index.html</p>
+<div class="highlighted-code code-style-2 language-markup line-numbers">
+<div>
+<pre><code>&lt;!doctype html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;Demo: tu primera depuración de código JavaScript&lt;/title&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;
+    &lt;style&gt;
+      h1 {
+        font-size: 1.5em
+      }
+      input, button {
+        min-width: 72px;
+        min-height: 36px;
+        border: 1px solid grey;
+      }
+      label, input, button {
+        display: block;
+      }
+      input {
+        margin-bottom: 1em;
+      }
+    &lt;/style&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;h1&gt;Demo: tu primera depuración de código JavaScript&lt;/h1&gt;
+	&lt;p&gt;En este primer ejemplo puedes ver cómo incluir un archivo js externo en nuestra web.&lt;/p&gt;
+	&lt;p&gt;Pulsa el botón derecho de tu ratón en esta web y "Ver código fuente de esta página", ahora fíjate cómo la etiqueta "script" hace referencia la archivo "primer-debug-javascript.js", como si se tratara de un css externo.&lt;/p&gt;
+	&lt;p&gt;Pulsa encima de "primer-javascript.js" y verás tu pimer código JavaScript.&lt;/p&gt;
+	&lt;p&gt;Esta primera web pretende sumar dos números. Pero si la pruebas un poco verás que, en lugar de eso, los concatena.&lt;/p&gt;
+	&lt;p&gt;Intenta analizar cómo comprueba que se ha pulsado el botón Suma, cómo recoge el primer número y el segundo y cómo pinta la solución.&lt;/p&gt;
+	&lt;p&gt;No te asustes, no hace falta que comprendas aún este código sólamente que te vayas familiarizando con el.&lt;/p&gt;
+	&lt;p&gt;Intenta descargar el archivo "index.html", junto con el archivo "primer-javascript.js" en tu escitorio e intenta que funcione, por ahora basta con eso.&lt;/p&gt;
+	&lt;p&gt;En el siguiente apartado aprenderás a depurar este código, para comprenter cómo arreglarlo y que sume los números en lugar de concatenarlos.&lt;/p&gt;
+	
+    &lt;label for="num1"&gt;Number 1&lt;/label&gt;
+    &lt;input placeholder="Number 1" id="num1"&gt;
+    &lt;label for="num2"&gt;Number 2&lt;/label&gt;
+    &lt;input placeholder="Number 2" id="num2"&gt;
+    &lt;button&gt;Suma Number 1 and Number 2&lt;/button&gt;
+    &lt;h2&gt;&lt;/h2&gt;
+    &lt;script src="js/primer-debug-javascript.js"&gt;&lt;/script&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+</div>
+</div>
+<p></p>
+<p></p>
+<p>Archivo primer-debug-javascript.js</p>
+<div class="highlighted-code code-style-2 language-js line-numbers">
+<div>
+<pre><code>/* Copyright 2016 Google Inc.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ * 
+ * http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License. */
+function onClick() {
+  if (inputsAreEmpty()) {
+    label.textContent = 'Error: one or both inputs are empty.';
+    return;
+  }
+  updateLabel();
+}
+function inputsAreEmpty() {
+  if (getNumber1() === '' || getNumber2() === '') {
+    return true;
+  } else {
+    return false;
+  }
+}
+function updateLabel() {
+  var addend1 = getNumber1();
+  var addend2 = getNumber2();
+  var sum = addend1 + addend2;
+  label.textContent = addend1 + ' + ' + addend2 + ' = ' + sum;
+}
+function getNumber1() {
+  return inputs[0].value;
+}
+function getNumber2() {
+  return inputs[1].value;
+}
+var inputs = document.querySelectorAll('input');
+var label = document.querySelector('h2');
+var button = document.querySelector('button');
+button.addEventListener('click', onClick);
+</code></pre>
+</div>
+</div>
+<p></p>
+</div>
+</div>
+</div>
+</div>
+</article>
+<div id="packageLicense" class="cc cc-by-sa">
+<p><span>Obra publicada con</span> <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Licencia Creative Commons Reconocimiento Compartir igual 4.0</a></p>
+</div>
+</section>
+</div>
+<div id='bottomPagination'>
+<nav class="pagination noprt">
+<a href="7_depurar_cdigo_javascript_con_chrome.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="72_para_saber_ms_integrar_toda_la_depuracin_en_visual_studio_code.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+</div>
+<script type="text/javascript" src="_style_js.js"></script></body></html>
